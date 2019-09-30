@@ -1,0 +1,39 @@
+<div class="md-custom-block">
+	<label class="md-custom-label"
+		   for="mdcustomLabel"
+		   ng-class="{'md-placeholder' : $ctrl.selected.length === 0}">{{$ctrl.label}}
+	</label>
+	<md-select aria-label="Boarding Hold"
+			id="mdcustomLabel"
+			class="md-custom-select"
+			ng-model="$ctrl.selected"
+			md-on-close="$ctrl.onClose()"
+			md-on-open="$ctrl.onOpen()"
+			select-infinite-scroll="$ctrl.onScrollEndLoadData($ctrl.pageNum);"
+			md-container-class="md-select-contact-container"
+			multiple>
+		<md-select-header class="md-custom-select-header">
+			<input aria-label="search"
+					type="search"
+					ng-change="$ctrl.getSearchResult(searchTerm);"
+					ng-keydown="$event.stopPropagation()"
+					placeholder="Search for a vegetable.."
+					class="md-custom-select-header-searchbox md-text"
+					id="multiCheckboxSearchField"
+					ng-model="searchTerm"
+					ng-model-options="{debounce: 300}">
+		</md-select-header>
+		<md-progress-linear md-mode="indeterminate" class="md-custom-progress-linear" ng-if="!$ctrl.isOnOpenLoading && $ctrl.isNextDataLoading"></md-progress-linear>
+		<md-button class="md-custom-button" ng-click="$ctrl.toggleSelectAll()">
+			<md-checkbox class="md-primary md-custom-checkbox"
+						aria-label="Select All"
+						ng-checked="$ctrl.isAllSelected()"></md-checkbox>
+			Select All
+		</md-button>		
+		<md-option ng-value="value"
+				ng-repeat="value in $ctrl.visibleOptions | filter:searchTerm" ng-click="$ctrl.toggle(value, $ctrl.preSelectedItems)">
+			{{value.name}}
+		</md-option>
+	</md-select>
+</div>
+
