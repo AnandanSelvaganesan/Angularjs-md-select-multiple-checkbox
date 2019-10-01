@@ -80,10 +80,10 @@
 
 <div ng-controller="SelectHeaderController" class="md-padding" ng-cloak>
 
-  <div>
-
+  <div layout-align="center center" layout="column">
+  <div layout="column" >
     <h1 class="md-title">Pick a vegetable below</h1>
-    <div layout="row" class="multi-select-checkbox">
+    <div class="multi-select-checkbox">
 
       <md-multi-select-checkbox-component
         ng-model="selectedVegetables"
@@ -95,15 +95,13 @@
       </md-multi-select-checkbox-component>
 
     </div>
+  
+    <h4 class="md-title">Selected items :</h4>
+    <div ng-repeat="item in selectedVegetables">
+      {{item.name}}
+    </div>
   </div>
-
-  <div>
-      <h4 class="md-title">Selected items :</h4>
-      <div ng-repeat="item in selectedVegetables">
-        {{item.name}}
-      </div>
-  </div>
-
+</div>
 </div>
 
   <!-- Angular Material requires Angular.js Libraries -->
