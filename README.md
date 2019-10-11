@@ -1,6 +1,8 @@
 # Angularjs-md-select-multiple-checkbox
 Angular Js material design md-select dropdown with search, multiple checkbox and infinite scroll
 
+Demo URL: https://anandanselvaganesan.github.io/Angularjs-md-select-multiple-checkbox
+
 ![md-select-multi-checkbox](https://raw.githubusercontent.com/AnandanSelvaganesan/Angularjs-md-select-multiple-checkbox/master/img/md-select-multi-checkbox.png)
 
 ![md-select-multi-checkbox-dropdown-open](https://raw.githubusercontent.com/AnandanSelvaganesan/Angularjs-md-select-multiple-checkbox/master/img/md-select-multi-checkbox-dropdown-open.png)
